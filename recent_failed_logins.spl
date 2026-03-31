@@ -1,0 +1,10 @@
+# Query 5: Recent Failed Logins (Real-time Monitor)
+# MITRE ATT&CK: T1110 - Brute Force
+# Description: Shows failed logins in the last 15 minutes for real-time SOC monitoring
+# Dashboard Panel: Recent Activity (Table) — set to auto-refresh every 30 seconds
+
+index=main "Failed password" earliest=-15m
+| rex field=_raw "from (?P<src_ip>\d+\.\d+\.\d+\.\d+)"
+| rex field=_raw "invalid user (?P<username>\w+)"
+| table _time src_ip username _raw
+| sort -_time

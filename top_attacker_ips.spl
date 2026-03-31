@@ -1,0 +1,10 @@
+# Query 1: Top Attacker IPs
+# MITRE ATT&CK: T1110 - Brute Force
+# Description: Identifies top source IPs generating failed SSH login attempts
+# Dashboard Panel: Top Attacker IPs (Table)
+
+index=main "Failed password"
+| rex field=_raw "from (?P<src_ip>\d+\.\d+\.\d+\.\d+)"
+| rex field=_raw "for (invalid user )?(?P<username>\S+) from"
+| stats count as Attempts by src_ip username
+| sort -Attempts

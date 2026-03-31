@@ -1,0 +1,14 @@
+# Query 3: Attack Summary
+# MITRE ATT&CK: T1110 - Brute Force
+# Description: High-level summary of the brute force campaign
+# Dashboard Panel: Attack Summary (Single Value / Table)
+
+index=main "Failed password"
+| rex field=_raw "from (?P<src_ip>\d+\.\d+\.\d+\.\d+)"
+| stats count as Total_Attacks,
+        dc(src_ip) as Unique_IPs,
+        dc(username) as Unique_Usernames,
+        earliest(_time) as First_Seen,
+        latest(_time) as Last_Seen
+| eval First_Seen=strftime(First_Seen, "%Y-%m-%d %H:%M:%S")
+| eval Last_Seen=strftime(Last_Seen, "%Y-%m-%d %H:%M:%S")

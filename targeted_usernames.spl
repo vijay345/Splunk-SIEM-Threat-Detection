@@ -1,0 +1,9 @@
+# Query 4: Targeted Usernames
+# MITRE ATT&CK: T1110.001 - Password Guessing
+# Description: Identifies which usernames are being targeted in the attack
+# Dashboard Panel: Targeted Usernames (Bar Chart)
+
+index=main "Failed password"
+| rex field=_raw "invalid user (?P<username>\w+)"
+| stats count by username
+| sort -count

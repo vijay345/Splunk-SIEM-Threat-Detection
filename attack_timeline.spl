@@ -1,0 +1,8 @@
+# Query 2: Attack Timeline
+# MITRE ATT&CK: T1110 - Brute Force
+# Description: Visualises failed login attempts over time to identify attack bursts
+# Dashboard Panel: Attack Timeline (Line Chart)
+
+index=main "Failed password"
+| rex field=_raw "from (?P<src_ip>\d+\.\d+\.\d+\.\d+)"
+| timechart count as Failed_Logins
