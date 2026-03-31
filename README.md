@@ -166,28 +166,28 @@ index=main "Failed password" earliest=-15m
 ### 🔴 Live Attack Detection in Splunk
 > Splunk detecting 61 failed SSH login attempts from attacker IP in real time.
 
-![Top Attacker IPs](screenshots/top_attacker_ips.png)
+<img width="1947" height="97" alt="top_attacker_ips" src="https://github.com/user-attachments/assets/541616a7-510e-4311-9e65-a0e5fa7de686" />
 
 ---
 
 ### 📈 Attack Timeline — Spike Visualisation
 > The sharp spike on the timeline shows the exact moment the brute force attack occurred.
 
-![Attack Timeline](screenshots/attack_timeline.png)
+<img width="1937" height="285" alt="attack_timeline" src="https://github.com/user-attachments/assets/7f2737c4-fb42-43b1-9d21-6949507d69c4" />
 
 ---
 
 ### 📊 Full Dashboard Overview
 > Complete SSH Brute Force Detection dashboard with all panels.
 
-![Full Dashboard](screenshots/full_dashboard.png)
+<img width="2035" height="832" alt="Splunk Dashboard" src="https://github.com/user-attachments/assets/add3d928-8b42-47d5-b516-ef1294268b52" />
 
 ---
 
 ### 🖥️ Raw Auth Log Evidence
 > Failed password entries in /var/log/auth.log confirming the attack source.
 
-![Auth Log](screenshots/auth_log_evidence.png)
+<img width="815" height="370" alt="auth_log_evidence" src="https://github.com/user-attachments/assets/0dfe5aba-153f-41a6-9ade-e50d89663f75" />
 
 ---
 
